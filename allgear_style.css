@@ -1,0 +1,39 @@
+body {
+    background-color: black;
+    font-family: Verdana, sans-serif;
+    color: white;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+}
+
+h1 {
+    text-align: center;
+    grid-column-start: 2;
+}
+
+nav {
+    position: fixed;
+    height: min-content;
+}
+
+section {
+    background-color: darkblue;
+    grid-column-start: 2;
+    border-radius: 10px;
+    margin: 1.5rem 3rem;
+    padding: 1rem 1.5rem;
+}
+
+@media screen and (max-width: 750px) {
+    body {
+        grid-template-columns: 100%;
+    }
+
+    h1 {
+        grid-column-start: 1;
+    }
+
+    section {
+        grid-column-start: 1;
+    }
+}

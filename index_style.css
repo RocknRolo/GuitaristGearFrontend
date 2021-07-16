@@ -1,0 +1,62 @@
+body {
+    background-color: black;
+    font-family: Verdana, sans-serif;
+    color: white;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 10% 90%;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 2%;
+}
+
+nav button {
+    margin: 0.1rem;
+    width: 4rem;
+    height: 3rem;
+}
+
+h1 {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    text-align: center;
+    height: min-content;
+}
+
+#guitaristList {
+    grid-column-start: 2;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: darkblue;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    padding: 0.5rem 1.5rem;
+}
+
+@media screen and (max-width: 750px) {
+    body {
+        grid-template-columns: 100%;
+        grid-template-rows: 5% 95%;
+    }
+    .item {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        height: min-content;
+    }
+
+    h1 {
+        grid-column-start: 1;
+    }
+
+    #guitaristList {
+        grid-column-start: 1;
+    }
+}

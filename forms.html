@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Guitarist Gear</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="forms_style.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body onload="addAllDataSelectFields()">
+<nav>
+    <button onclick="window.location.href='index.html';">Back</button>
+</nav>
+<h1>Add / Edit info</h1>
+
+<section id="form1" class="form_section">
+    <form id="guitaristForm" class="form">
+        <h3>Guitarist</h3>
+        <label for="select_guitarist">Add/Edit guitarist</label><br>
+        <select id="select_guitarist" onchange="fillGuitaristFields()"></select><br><br>
+        <input type="text" id="guitaristName" placeholder="name" required><br>
+        <input type="text" id="birthPlace" placeholder="birth place" required><br>
+        <input type="number" id="birthYear" placeholder="birth year" required><br>
+        <input type="text" id="genre" placeholder="genre" required><br><br>
+        <input type="submit" class="submit_button" id="addEditGuitarist" onclick="addOrEditGuitarist(event)" value="Add"><br><br>
+    </form>
+    <form>
+        <label for="select_delete_guitarist">Delete guitarist</label><br>
+        <select id="select_delete_guitarist" onchange="updateButton('select_delete_guitarist', 'delete_guitarist')"></select><br><br>
+        <button id="delete_guitarist" disabled onclick="deleteGuitarist(event)">Delete</button>
+    </form>
+</section>
+
+<section id="form2" class="form_section">
+    <form id="gearForm" class="form">
+        <h3>Gear</h3>
+        <label for="select_gear">Add/Edit gear</label><br>
+        <select id="select_gear" onchange="fillGearFields()"></select><br><br>
+        <select id="select_gear_man"></select><br>
+
+        <input type="text" id="gearName" placeholder="name" required><br>
+        <input type="text" id="gearType" placeholder="gear type" required><br>
+        <input type="number" id="weightInGrams" placeholder="weight in grams" required><br><br>
+        <input type="submit" class="submit_button" id="addEditGear" onclick="addOrEditGear(event)" value="Add"><br><br>
+    </form>
+    <form>
+        <label for="select_delete_gear">Delete gear</label><br>
+        <select id="select_delete_gear" onchange="updateButton('select_delete_gear','delete_gear')"></select><br><br>
+        <button id="delete_gear" disabled onclick="deleteGear(event)">Delete</button>
+    </form>
+</section>
+
+<section id="form3" class="form_section">
+    <form id="manufacturerForm" class="form">
+        <h3>Manufacturer</h3>
+        <label for="select_manufacturer">Add/Edit manufacturer</label><br>
+        <select id="select_manufacturer" onchange="fillManFields()"></select><br><br>
+
+        <input type="text" id="manName" placeholder="name" required><br>
+        <input type="text" id="mainProductType" placeholder="main product type" required><br>
+        <input type="text" id="placeFounded" placeholder="place founded" required><br>
+        <input type="number" id="yearFounded" placeholder="year founded" required><br><br>
+        <input type="submit" class="submit_button" id="addEditMan" onclick="addOrEditMan(event)" value="Add"><br><br>
+    </form>
+    <form>
+        <label for="select_delete_man">Delete manufacturer</label><br>
+        <select id="select_delete_man" onchange="updateButton('select_delete_man', 'delete_man')"></select><br><br>
+        <button id="delete_man" disabled onclick="deleteMan(event)">Delete</button>
+    </form>
+</section>
+
+<section id="form4" class="form_section">
+    <form id="editGearFromGuitaristForm" class="form">
+        <h3>Edit gear list</h3>
+        <label for="select_gearlist">Guitarist:</label><br>
+        <select id="select_gearlist" onchange="checkEditGearlistSelection()"></select><br><br>
+
+        <label for="select_add_gear">Add to gear list</label><br>
+        <select id="select_add_gear" disabled onchange="updateButton('select_add_gear','add_gear_to_gearlist')"></select><br><br>
+        <button id="add_gear_to_gearlist" onclick="addGearToGearlist(event)" disabled>Add to gear list</button><br><br>
+
+        <label for="select_delete_gear_from_gearlist">Delete from gear list</label><br>
+        <select id="select_delete_gear_from_gearlist" disabled onchange="updateButton('select_delete_gear_from_gearlist','delete_gear_from_gearlist')"></select><br><br>
+        <button id="delete_gear_from_gearlist" onclick="deleteGearFromGearlist(event)" disabled>Delete from gear list</button>
+    </form>
+</section>
